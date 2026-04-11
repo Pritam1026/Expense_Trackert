@@ -2,10 +2,6 @@
 
 {% block title %}Spendly — Track Every Rupee{% endblock %}
 
-{% block head %}
-<link rel="stylesheet" href="{{ url_for('static', filename='css/landing.css') }}">
-{% endblock %}
-
 {% block content %}
 
 <!-- ======================== HERO (redesigned) ======================== -->
@@ -85,13 +81,18 @@
 
 <!-- ======================== MODAL ======================== -->
 <div class="lp-modal-overlay" id="modalOverlay">
-    <div class="lp-modal">
+    <div class="lp-modal lp-modal-video">
         <button class="lp-modal-close" id="modalClose" aria-label="Close">&#x2715;</button>
-        <img
-            src="{{ url_for('static', filename='img/dashboard-preview.png') }}"
-            alt="Spendly dashboard preview"
-            class="lp-modal-img"
-        >
+        <div class="lp-video-wrapper">
+            <iframe
+                id="modalVideo"
+                data-src="https://www.youtube.com/embed/dQw4w9WgXcQ?rel=0"
+                src=""
+                frameborder="0"
+                allow="autoplay; encrypted-media"
+                allowfullscreen
+            ></iframe>
+        </div>
     </div>
 </div>
 
@@ -131,14 +132,25 @@
     const btn     = document.getElementById('howItWorksBtn');
     const overlay = document.getElementById('modalOverlay');
     const close   = document.getElementById('modalClose');
+    const iframe  = document.getElementById('modalVideo');
 
-    btn.addEventListener('click', () => overlay.classList.add('lp-modal-open'));
-    close.addEventListener('click', () => overlay.classList.remove('lp-modal-open'));
+    function openModal() {
+        iframe.src = iframe.dataset.src;
+        overlay.classList.add('lp-modal-open');
+    }
+
+    function closeModal() {
+        overlay.classList.remove('lp-modal-open');
+        iframe.src = '';
+    }
+
+    btn.addEventListener('click', openModal);
+    close.addEventListener('click', closeModal);
     overlay.addEventListener('click', (e) => {
-        if (e.target === overlay) overlay.classList.remove('lp-modal-open');
+        if (e.target === overlay) closeModal();
     });
     document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') overlay.classList.remove('lp-modal-open');
+        if (e.key === 'Escape') closeModal();
     });
 </script>
 {% endblock %}
