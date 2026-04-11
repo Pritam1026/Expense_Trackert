@@ -1,0 +1,280 @@
+/* ------------------------------------------------------------------ */
+/* Hero — landing page only                                            */
+/* ------------------------------------------------------------------ */
+
+.lp-hero {
+    padding: 5rem 2rem 4rem;
+    text-align: center;
+}
+
+.lp-hero-inner {
+    max-width: 760px;
+    margin: 0 auto;
+}
+
+/* Badge */
+.lp-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--accent-light);
+    color: var(--accent);
+    font-size: 0.8rem;
+    font-weight: 500;
+    padding: 0.35rem 1rem;
+    border-radius: 999px;
+    margin-bottom: 2rem;
+}
+
+.lp-badge-dot {
+    width: 7px;
+    height: 7px;
+    background: var(--accent);
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+/* Title */
+.lp-title {
+    font-family: var(--font-display);
+    font-size: clamp(2.6rem, 6vw, 4.2rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    margin-bottom: 1.25rem;
+}
+
+.lp-title em {
+    font-style: italic;
+    color: var(--accent);
+}
+
+/* Subtitle */
+.lp-subtitle {
+    font-size: 1.05rem;
+    color: var(--ink-muted);
+    line-height: 1.7;
+    max-width: 520px;
+    margin: 0 auto 2.25rem;
+}
+
+/* CTA buttons */
+.lp-actions {
+    display: flex;
+    gap: 0.875rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 3.5rem;
+}
+
+.lp-btn {
+    display: inline-block;
+    background: var(--ink);
+    color: var(--paper);
+    padding: 0.75rem 1.75rem;
+    border-radius: var(--radius-md);
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.15s;
+    text-decoration: none;
+}
+
+.lp-btn:hover {
+    background: var(--accent);
+    transform: translateY(-1px);
+}
+
+/* ------------------------------------------------------------------ */
+/* Mock dashboard                                                      */
+/* ------------------------------------------------------------------ */
+
+.lp-dashboard {
+    background: var(--paper-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 16px 60px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    max-width: 680px;
+    margin: 0 auto;
+}
+
+.lp-dash-chrome {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 0.9rem 1.25rem;
+    background: var(--paper-warm);
+    border-bottom: 1px solid var(--border-soft);
+}
+
+.lp-dot {
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+}
+
+.lp-dot-red    { background: #ff5f57; }
+.lp-dot-yellow { background: #febc2e; }
+.lp-dot-green  { background: #28c840; }
+
+.lp-dash-body {
+    padding: 1.5rem;
+}
+
+/* Stat cards row */
+.lp-stat-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.875rem;
+    margin-bottom: 1.5rem;
+}
+
+.lp-stat {
+    background: var(--paper);
+    border: 1px solid var(--border-soft);
+    border-radius: var(--radius-md);
+    padding: 1rem 1.1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.lp-stat-label {
+    font-size: 0.75rem;
+    color: var(--ink-muted);
+    font-weight: 500;
+}
+
+.lp-stat-value {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    color: var(--ink);
+    line-height: 1.2;
+}
+
+.lp-stat-plain {
+    font-family: var(--font-body);
+    font-weight: 600;
+}
+
+.lp-stat-sub   { font-size: 0.75rem; font-weight: 500; }
+.lp-stat-up    { color: #c0392b; }
+.lp-stat-ok    { color: var(--accent); }
+.lp-stat-muted { color: var(--ink-faint); }
+
+/* Category bars */
+.lp-bars {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.lp-bar-row {
+    display: grid;
+    grid-template-columns: 60px 1fr;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.lp-bar-label {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--ink-soft);
+    text-align: right;
+}
+
+.lp-bar-track {
+    height: 8px;
+    background: var(--border-soft);
+    border-radius: 999px;
+    overflow: hidden;
+}
+
+.lp-bar {
+    height: 100%;
+    border-radius: 999px;
+}
+
+.lp-bar-amber  { background: #c17f24; }
+.lp-bar-blue   { background: #5b7fa6; }
+.lp-bar-purple { background: #8b5e83; }
+
+/* ------------------------------------------------------------------ */
+/* Modal                                                               */
+/* ------------------------------------------------------------------ */
+
+.lp-modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 15, 15, 0.7);
+    z-index: 200;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    backdrop-filter: blur(4px);
+}
+
+.lp-modal-overlay.lp-modal-open {
+    display: flex;
+}
+
+.lp-modal {
+    position: relative;
+    background: var(--paper-card);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 24px 80px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+    max-width: 860px;
+    width: 100%;
+    animation: modalIn 0.2s ease;
+}
+
+@keyframes modalIn {
+    from { opacity: 0; transform: scale(0.96) translateY(8px); }
+    to   { opacity: 1; transform: scale(1)    translateY(0); }
+}
+
+.lp-modal-close {
+    position: absolute;
+    top: 0.875rem;
+    right: 0.875rem;
+    background: var(--paper-warm);
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    font-size: 0.85rem;
+    color: var(--ink-muted);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.15s, color 0.15s;
+    z-index: 1;
+}
+
+.lp-modal-close:hover {
+    background: var(--ink);
+    color: var(--paper);
+    border-color: var(--ink);
+}
+
+.lp-modal-img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* ------------------------------------------------------------------ */
+/* Responsive                                                          */
+/* ------------------------------------------------------------------ */
+
+@media (max-width: 600px) {
+    .lp-stat-row { grid-template-columns: 1fr 1fr; }
+    .lp-stat:last-child { grid-column: span 2; }
+    .lp-title { font-size: 2.2rem; }
+}
