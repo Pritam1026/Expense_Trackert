@@ -508,6 +508,115 @@ a { color: inherit; text-decoration: none; }
 }
 
 /* ------------------------------------------------------------------ */
+/* Footer links                                                        */
+/* ------------------------------------------------------------------ */
+
+.footer-links {
+    display: flex;
+    gap: 1.25rem;
+    margin-top: 0.25rem;
+}
+
+.footer-links a {
+    font-size: 0.8rem;
+    color: var(--ink-faint);
+    transition: color 0.2s;
+}
+
+.footer-links a:hover { color: var(--paper); }
+
+/* ------------------------------------------------------------------ */
+/* Terms page                                                          */
+/* ------------------------------------------------------------------ */
+
+.terms-hero {
+    background: var(--paper-warm);
+    border-bottom: 1px solid var(--border);
+    padding: 4rem 2rem 3rem;
+    text-align: center;
+}
+
+.terms-hero-inner {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.terms-title {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 4vw, 3rem);
+    color: var(--ink);
+    margin-bottom: 0.5rem;
+    margin-top: 1rem;
+}
+
+.terms-subtitle {
+    font-size: 0.85rem;
+    color: var(--ink-faint);
+}
+
+.terms-section {
+    padding: 4rem 2rem 6rem;
+}
+
+.terms-inner {
+    max-width: 720px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+.terms-block {
+    background: var(--paper-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 2rem 2.25rem;
+}
+
+.terms-block h2 {
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    color: var(--ink);
+    margin-bottom: 1rem;
+}
+
+.terms-block p {
+    font-size: 0.95rem;
+    color: var(--ink-muted);
+    line-height: 1.75;
+    margin-bottom: 0.75rem;
+}
+
+.terms-block p:last-child { margin-bottom: 0; }
+
+.terms-block ul {
+    margin: 0.75rem 0 0.75rem 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.terms-block ul li {
+    font-size: 0.95rem;
+    color: var(--ink-muted);
+    line-height: 1.65;
+}
+
+.terms-block a {
+    color: var(--accent);
+    font-weight: 500;
+}
+
+.terms-block a:hover { text-decoration: underline; }
+
+.terms-contact {
+    background: var(--accent-light);
+    border-color: var(--accent-light);
+}
+
+.terms-contact h2 { color: var(--accent); }
+
+/* ------------------------------------------------------------------ */
 /* Responsive                                                          */
 /* ------------------------------------------------------------------ */
 
